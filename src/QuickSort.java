@@ -4,8 +4,8 @@ class QuickSort
     {
         int pivot = arr[high];
         int i = (low-1); 
-        for (int j=low; j<high; j++)
-        { if (arr[j] < pivot)
+        for (int j=low; j<high; j++){
+            if (arr[j] < pivot)
             {
                 i++;
                 int temp = arr[i];
@@ -19,7 +19,7 @@ class QuickSort
 
         return i+1;
     }
-    
+
     void sort(int arr[], int low, int high)
     {
         if (low < high)
@@ -34,7 +34,7 @@ class QuickSort
     static void printArray(int arr[])
     {
         int n = arr.length;
-        for (int i=0; i<n; ++i)
+        for (int i=0; i<n; i++)
             System.out.print(arr[i]+" ");
         System.out.println();
     }
