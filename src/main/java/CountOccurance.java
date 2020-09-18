@@ -17,6 +17,6 @@ public class CountOccurance {
 
     public static void main(String[] args) {
         String str = "Mohammad zaky Khan";
-        CountOccurance(str);
+    CountOccurance(str);
     }
 }

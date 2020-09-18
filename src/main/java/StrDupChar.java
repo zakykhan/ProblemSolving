@@ -12,7 +12,7 @@ public class StrDupChar {
         }
     }
     public static void main(String[] args) {
-        String str = "beautiful beach";
+        String str = "zaky khan";
         strDup(str);
 
     }
