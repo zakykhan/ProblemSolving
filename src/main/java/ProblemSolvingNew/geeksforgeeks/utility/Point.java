@@ -1,4 +1,4 @@
-package com.company.geeksforgeeks.utility;
+package ProblemSolvingNew.geeksforgeeks.utility;
 
 import java.util.Objects;
 

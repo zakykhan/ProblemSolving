@@ -1,4 +1,4 @@
-package com.company.geeksforgeeks.algo;
+package ProblemSolvingNew.geeksforgeeks.algo;
 
 import java.util.Arrays;
 

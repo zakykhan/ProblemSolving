@@ -1,9 +1,9 @@
-package com.company.geeksforgeeks.medium;
+package ProblemSolvingNew.geeksforgeeks.medium;
 
-import com.company.geeksforgeeks.utility.BinaryTree;
-import com.company.geeksforgeeks.utility.CommonUtility;
-import com.company.geeksforgeeks.utility.Node;
-import com.company.geeksforgeeks.utility.Point;
+import ProblemSolvingNew.geeksforgeeks.utility.BinaryTree;
+import ProblemSolvingNew.geeksforgeeks.utility.CommonUtility;
+import ProblemSolvingNew.geeksforgeeks.utility.Node;
+import ProblemSolvingNew.geeksforgeeks.utility.Point;
 import com.google.common.math.IntMath;
 
 import java.util.*;

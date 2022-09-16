@@ -1,4 +1,4 @@
-package com.company.geeksforgeeks.utility;
+package ProblemSolvingNew.geeksforgeeks.utility;
 
 public class BinaryTree {
     public static Node root;

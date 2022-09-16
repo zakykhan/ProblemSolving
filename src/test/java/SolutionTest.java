@@ -1,16 +1,15 @@
-import com.company.geeksforgeeks.medium.Solutions;
-import com.company.geeksforgeeks.utility.*;
+import ProblemSolvingNew.geeksforgeeks.medium.Solutions;
+import ProblemSolvingNew.geeksforgeeks.utility.BinaryTree;
+import ProblemSolvingNew.geeksforgeeks.utility.*;
+import ProblemSolvingNew.geeksforgeeks.utility.Point;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Stack;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.mockito.BDDMockito.given;
 
 public class SolutionTest {
 
