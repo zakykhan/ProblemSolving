@@ -111,6 +111,7 @@ public class Solutions {
         combination(4);*/
 
         int[] arr = {2, 6, 3, 4, 7, 2, 10, 3, 2, 1};
+
         System.out.println("answer: " + getMinDiff(arr, 10, 5));
 
     }
@@ -739,7 +740,6 @@ public class Solutions {
                 count++;
                 q.add(q.poll());
             }
-
         }
         return count - 1;
     }
@@ -783,5 +783,93 @@ public class Solutions {
 
         Arrays.sort(arr);
         return arr[n-1] - arr[0];
+    }
+
+    //Function to find the minimum number of platforms required at the
+    //railway station such that no train waits.
+    static int findPlatform(int arr[], int dep[], int n)
+    {
+        // add your code here
+
+        int platform_needed = 1, min_platform = 1;
+
+        for (int i = 0; i < n; i++) {
+            platform_needed = 1;
+
+            for (int j = 0; j < n; j++) {
+                if (i != j)
+                    if (arr[i] >= arr[j]
+                            && dep[j] >= arr[i])
+                        platform_needed++;
+            }
+
+            min_platform = Math.max(min_platform, platform_needed);
+        }
+
+        return min_platform;
+    }
+
+
+    /*Given an array of N integers arr[] where each element represents
+    the max length of the jump that can be made forward from that element.
+    Find the minimum number of jumps to reach the end of the array (starting from the first element).
+    If an element is 0, then you cannot move through that element.*/
+    static int minJumps(int[] arr){
+        // your code here
+        int n = arr.length;
+        if(arr[0] == 0 && n > 1) return -1;
+
+        if(n == 1) return 0;
+
+        int steps = arr[0];
+        int maxReach = arr[0];
+        int jumps = 1;
+
+        for(int i = 1; i < n; i++){
+
+            if(i == n - 1) return jumps;
+
+            if(steps != 0) {
+
+                maxReach = Math.max(maxReach, arr[i] + i);
+                steps--;
+            }
+
+            if(steps == 0){
+                if(i>=maxReach) return -1;
+
+                jumps++;
+                steps = maxReach - i;
+            }
+        }
+        return -1;
+    }
+
+    // arr: input array
+    // n: size of array
+    //Function to find the sum of contiguous subarray with maximum sum.
+    long maxSubarraySum(int arr[], int n){
+
+        // Your code here
+        int currentSum = 0;
+        int maxSum = arr[0];
+
+        if(n == 0) return 0;
+
+        if(n == 1) return arr[0];
+
+        for(int i = 0; i < n; i++){
+
+            currentSum = currentSum + arr[i];
+
+            if(currentSum > maxSum)
+
+                maxSum = currentSum;
+
+            if(currentSum < 0)
+
+                currentSum = 0;
+        }
+        return maxSum;
     }
 }
