@@ -37,7 +37,6 @@ class Solution {
 
         Set<Integer> set = new HashSet<>();
         Map<Integer,Integer> um = new HashMap<>();
-        um.put(1, um.get())
         // Your code goes here
         int temp = 0;
 

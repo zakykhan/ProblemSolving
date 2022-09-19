@@ -4,7 +4,7 @@ import ProblemSolvingNew.geeksforgeeks.utility.BinaryTree;
 import ProblemSolvingNew.geeksforgeeks.utility.CommonUtility;
 import ProblemSolvingNew.geeksforgeeks.utility.Node;
 import ProblemSolvingNew.geeksforgeeks.utility.Point;
-import com.google.common.math.IntMath;
+//import com.google.common.math.IntMath;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -102,16 +102,16 @@ public class Solutions {
         q7(new String[]{"A", " ", "B", "C"});
         q7(new String[]{"A", " ", "B", "C"});
         q7(new String[]{"A", "B", " ", "C"});
-
     }
 
-
     public static void main(String[] args) {
-        a.add("A");
+       /* a.add("A");
         a.add("B");
         a.add("C");
-        combination(4);
+        combination(4);*/
 
+        int[] arr = {2, 6, 3, 4, 7, 2, 10, 3, 2, 1};
+        System.out.println("answer: " + getMinDiff(arr, 10, 5));
 
     }
 
@@ -527,7 +527,7 @@ public class Solutions {
         return temp;
     }
 
-    public int[] q39(int givenSum) {
+   /* public int[] q39(int givenSum) {
         for (int i = 0; i < givenSum; i++) {
             if (IntMath.isPrime(i)) {
                 int anotherNumber = givenSum - i;
@@ -537,7 +537,7 @@ public class Solutions {
             }
         }
         return new int[0];
-    }
+    }*/
 
 
     public long maximiseRevenue(List<Long> pickup, List<Long> drop, List<Integer> tip) {
@@ -713,14 +713,14 @@ public class Solutions {
         if (size == 0) return 0;
         if (size == 1) return 1;
 
-        return tilingProblem(size - 1) + tilingProblem( size - 2);
+        return tilingProblem(size - 1) + tilingProblem(size - 2);
     }
 
     public int tilingProblem(int size) {
         if (size == 0) return 0;
         if (size == 1) return 1;
 
-        return tilingProblem(size - 1) + tilingProblem( size - 2);
+        return tilingProblem(size - 1) + tilingProblem(size - 2);
     }
 
     public int heightOfTree(Node root) {
@@ -735,12 +735,53 @@ public class Solutions {
             Node peek = q.peek();
             Optional.ofNullable(pop.left).ifPresent(q::add);
             Optional.ofNullable(pop.right).ifPresent(q::add);
-            if (peek  == null) {
+            if (peek == null) {
                 count++;
                 q.add(q.poll());
             }
 
         }
         return count - 1;
+    }
+
+    static boolean checkIfSubArrayContainSum(int arr[], int n) {
+        //Your code here
+
+        int sum = 0;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+
+            sum += arr[i];
+
+            if (arr[i] == 0) {
+                return true;
+            }
+
+            if (sum == 0 || map.containsKey(sum)) {
+                return true;
+            } else {
+                map.put(sum, 1);
+            }
+        }
+        return false;
+    }
+
+    static int getMinDiff(int[] arr, int n, int k) {
+        // code here
+
+        for(int i = 0; i < n; i++){
+            if(arr[i] > k){
+                arr[i] = arr[i] - k;
+            }
+
+            if(arr[i] <= k){
+                arr[i] = arr[i] + k;
+            }
+        }
+
+        Arrays.sort(arr);
+        return arr[n-1] - arr[0];
     }
 }
