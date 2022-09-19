@@ -294,21 +294,21 @@ public class Solutions {
 
     public int q19(int[] arr, int i) {
         int startingIndex = findStartingIndex(arr, i, 0, arr.length - 1);
-        int endIndex = findEndIndex(arr, i, 0, arr.length - 1);
+        int endIndex = findEndIndex(arr, i, arr.length - 1);
         System.out.println(endIndex);
         return (endIndex - startingIndex);
     }
 
-    private int findEndIndex(int[] arr, int i, int start, int end) {
-        int middle = (start + end) / 2;
+    private int findEndIndex(int[] arr, int i, int end) {
+        int middle = (end) / 2;
         if (middle < end) {
             if (arr[middle] == i && arr[middle + 1] > i) {
                 return middle;
             }
             if (arr[middle] == i && arr[middle + 1] >= i) {
-                return findStartingIndex(arr, i, start, middle);
+                return findStartingIndex(arr, i, 0, middle);
             } else {
-                return findStartingIndex(arr, i, start, end);
+                return findStartingIndex(arr, i, 0, end);
             }
         }
         return -1;
@@ -343,8 +343,8 @@ public class Solutions {
     }
 
     public int q211(int m, int n) {
-        int x[] = {1, 0};
-        int y[] = {0, 1};
+        int[] x = {1, 0};
+        int[] y = {0, 1};
 
         int k = 0, l = 0;
 
@@ -423,7 +423,7 @@ public class Solutions {
         int sum = Stream.of(arr).mapToInt(Integer::intValue).sum();
         while (i < arr.length) {
             sum = sum - arr[i];
-            if (Math.abs(sum) == Math.abs((int) temp2)) {
+            if (Math.abs(sum) == Math.abs(temp2)) {
                 return i;
             }
             temp2 = temp2 + arr[i];
@@ -608,7 +608,7 @@ public class Solutions {
         return maxSumSorFar;
     }
 
-    public Integer[] q42(int[] arr) {
+    public void q42(int[] arr) {
         int last = arr.length - 1;
 
         for (int i = 0; i < arr.length - 1 && i < last; ) {
@@ -635,7 +635,6 @@ public class Solutions {
             }
         }
         Arrays.stream(arr).boxed().forEach(System.out::println);
-        return null;
     }
 
     public int[] q56(int[] arr, int k) {
@@ -650,7 +649,7 @@ public class Solutions {
     // wwwwaaadexxxxxx
     public String q57(String inputString) {
         char lastVisited = '\n';
-        String finalString = "";
+        StringBuilder finalString = new StringBuilder();
         int count = 1, i = 0;
         do {
             char c = inputString.charAt(i);
@@ -658,7 +657,7 @@ public class Solutions {
                 count++;
                 i++;
             } else if (lastVisited != '\n') {
-                finalString = finalString + lastVisited + count;
+                finalString.append(lastVisited).append(count);
                 count = 1;
                 lastVisited = '\n';
             } else {
@@ -666,8 +665,8 @@ public class Solutions {
                 i++;
             }
         } while (inputString.length() > i);
-        finalString = finalString + lastVisited + count;
-        return finalString;
+        finalString.append(lastVisited).append(count);
+        return finalString.toString();
     }
 
 
@@ -744,7 +743,7 @@ public class Solutions {
         return count - 1;
     }
 
-    static boolean checkIfSubArrayContainSum(int arr[], int n) {
+    static boolean checkIfSubArrayContainSum(int[] arr, int n) {
         //Your code here
 
         int sum = 0;
@@ -787,7 +786,7 @@ public class Solutions {
 
     //Function to find the minimum number of platforms required at the
     //railway station such that no train waits.
-    static int findPlatform(int arr[], int dep[], int n)
+    static int findPlatform(int[] arr, int[] dep, int n)
     {
         // add your code here
 
@@ -805,7 +804,6 @@ public class Solutions {
 
             min_platform = Math.max(min_platform, platform_needed);
         }
-
         return min_platform;
     }
 
@@ -848,7 +846,7 @@ public class Solutions {
     // arr: input array
     // n: size of array
     //Function to find the sum of contiguous subarray with maximum sum.
-    long maxSubarraySum(int arr[], int n){
+    long maxSubarraySum(int[] arr, int n){
 
         // Your code here
         int currentSum = 0;
@@ -879,7 +877,6 @@ public class Solutions {
     public static boolean find3Numbers(int[] a, int n, int X) {
 
         // Your code Here
-
         HashMap<Integer,Integer> hm=new HashMap<>();
         for(int i = 0; i < n; i++)
         {
@@ -891,6 +888,5 @@ public class Solutions {
             hm.put(a[i],1);
         }
         return false;
-
     }
 }

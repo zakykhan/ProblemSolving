@@ -7,7 +7,7 @@ public class StrRevRecurr {
     }
 
 
-    public static String reverseIt(String str){
+    public static String reverseIt(String str) {
         if(str.isEmpty()){
             return str;
         }
