@@ -467,7 +467,6 @@ public class Solutions {
             }
             if (arr[middle] <= i) return findStartingIndexOfNumber(arr, i, start, middle);
             else return findStartingIndexOfNumber(arr, i, middle + 1, end);
-
         }
         return -1;
     }

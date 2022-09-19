@@ -696,10 +696,10 @@ public class SolutionTest {
      * Input: n = 9990
      * Output: 17 9973
      */
-    @Test
+    /*@Test
     public void q39() {
         Assertions.assertArrayEquals(new int[]{3, 71}, solutions.q39(74));
-    }
+    }*/
 
 
     @Test

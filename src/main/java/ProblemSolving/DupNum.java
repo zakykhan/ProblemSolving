@@ -1,3 +1,5 @@
+package ProblemSolving;
+
 public class DupNum {
     public static void main(String[] args) {
         int[] arr = {11,2,11,4,6,4,7,2,10};

@@ -1,3 +1,5 @@
+package ProblemSolving;
+
 public class PreOrderTraversal {
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();

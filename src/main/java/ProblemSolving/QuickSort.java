@@ -1,3 +1,5 @@
+package ProblemSolving;
+
 class QuickSort
 {
     int partition(int arr[], int low, int high)

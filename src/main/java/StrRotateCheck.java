@@ -3,11 +3,9 @@ public class StrRotateCheck {
     if (st1.length() != st2.length()) {
       return false;
     }
+    StringBuilder sb=new StringBuilder(st2);
     String st3 = st1 + st1;
-    if (st3.indexOf(st2)!=-1)
-      return true;
-    else
-      return false;
+    return st3.contains(sb.reverse());
   }
 
   public static void main(String[] args) {

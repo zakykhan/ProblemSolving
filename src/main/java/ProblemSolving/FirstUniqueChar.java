@@ -1,3 +1,5 @@
+package ProblemSolving;
+
 public class FirstUniqueChar {
    static char[] count = new char[256];
     static int getFirst(String str){

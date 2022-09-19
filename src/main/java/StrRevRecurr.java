@@ -6,12 +6,11 @@ public class StrRevRecurr {
         System.out.println("Reverse: "+res);
     }
 
-
     public static String reverseIt(String str) {
-        if(str.isEmpty()){
+        if(str.isEmpty()) {
             return str;
         }
-        else{
+        else {
             return reverseIt(str.substring(1))+str.charAt(0);
         }
     }
