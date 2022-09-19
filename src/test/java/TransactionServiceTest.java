@@ -7,7 +7,7 @@ public class TransactionServiceTest {
     @Test
     public void checkIncome() {
         TransactionWrapper transactionWrapper = new TransactionWrapper("src/main/resources/data");
-        transactionService = new TransactionServiceImpl(transactionWrapper);
+        transactionService = new TransactionServiceImpl();
         transactionService.checkIncome();
 
     }

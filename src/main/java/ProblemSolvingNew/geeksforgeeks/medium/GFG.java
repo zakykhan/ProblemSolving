@@ -3,10 +3,6 @@ package ProblemSolvingNew.geeksforgeeks.medium;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 class GFG {
     public static void main(String[] args) throws IOException {
@@ -14,8 +10,8 @@ class GFG {
         int t = Integer.parseInt(br.readLine().trim()); // Inputting the testcases
         while (t-- > 0) {
             int n = Integer.parseInt(br.readLine().trim());
-            int a[] = new int[(int) (n)];
-            String inputLine[] = br.readLine().trim().split(" ");
+            int[] a = new int[(int) (n)];
+            String[] inputLine = br.readLine().trim().split(" ");
             for (int i = 0; i < n; i++) {
                 a[i] = Integer.parseInt(inputLine[i]);
             }
@@ -33,14 +29,11 @@ class GFG {
 
 class Solution {
 
-    public void segregateElements(int arr[], int n) {
-
-        Set<Integer> set = new HashSet<>();
-        Map<Integer,Integer> um = new HashMap<>();
+    public void segregateElements(int[] arr, int n) {
         // Your code goes here
-        int temp = 0;
+        int temp;
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < n; i++) {
             if (arr[i] < 0) {
                 temp = arr[i];
                 arr[arr.length - 1] = temp;

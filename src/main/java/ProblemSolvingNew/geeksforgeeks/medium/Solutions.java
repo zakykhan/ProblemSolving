@@ -872,4 +872,25 @@ public class Solutions {
         }
         return maxSum;
     }
+
+
+    //Function to find if there exists a triplet in the
+    //array A[] which sums up to X.
+    public static boolean find3Numbers(int[] a, int n, int X) {
+
+        // Your code Here
+
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = i + 1; j < n; j++)
+            {
+                if(hm.containsKey(X - (a[i] + a[j])))
+                    return true;
+            }
+            hm.put(a[i],1);
+        }
+        return false;
+
+    }
 }

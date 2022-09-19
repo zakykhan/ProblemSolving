@@ -1,4 +1,4 @@
-public class StrisDigPre {
+public class StringDigPre {
     public static void main(String[] args) {
         String input = "zaky";
         char[] arr = input.toCharArray();
@@ -7,7 +7,7 @@ public class StrisDigPre {
             if(Character.isDigit(c)){
                 res.append(c);
             }
-            else{
+            else {
                 System.out.println("There's no digit present in string...");
                 break;
             }

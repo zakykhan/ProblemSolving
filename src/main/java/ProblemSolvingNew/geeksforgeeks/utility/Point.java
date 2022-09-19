@@ -36,6 +36,4 @@ public class Point {
         return p.x == q.y;
     }
 
-
-
 };
