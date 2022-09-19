@@ -558,7 +558,6 @@ public class Solutions {
                         index.pop();
                         index.push(i);
                     }
-
                 } else {
                     index.push(i);
                 }
